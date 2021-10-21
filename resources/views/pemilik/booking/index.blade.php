@@ -32,6 +32,7 @@
                       <th class="text-nowrap">Nama penyewa</th>
                       <th class="text-nowrap">No Telp</th>
                       <th class="text-nowrap">Keterangan</th>
+                      <th class="text-nowrap">Tagihan</th>
                       <th class="text-nowrap">Status Transaksi</th>
                       <th class="text-nowrap">Action</th>
                     </tr>
@@ -48,6 +49,7 @@
                         <td>{{getNameUser($bookings->user_id)}}</td>
                         <td><a href="https://wa.me/{{getTlpUser($bookings->user_id)}}?text=Assalamualaikum%20{{getNameUser($bookings->user_id)}}%20saya%20pemilik%20tanah">{{getTlpUser($bookings->user_id)}}</a></td>
                         <td>{{$bookings->lama_sewa}} Bulan</td>
+                        <td>{{$bookings->harga_total - $bookings->payment->jumlah_bayar}}</td>
                         <td>{{$bookings->payment->status}}</td>
                         <td>
                           @if ($bookings->status == 'Pending')

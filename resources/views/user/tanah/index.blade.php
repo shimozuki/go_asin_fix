@@ -46,7 +46,7 @@
                       <th width="1%">No</th>
                       <th class="text-nowrap">Nomor Transaksi</th>
                       <th class="text-nowrap">Nama Tanah</th>
-                      <th class="text-nowrap">Harga</th>
+                      <th class="text-nowrap">Sisa Tagihan</th>
                       <th class="text-nowrap">Keterangan</th>
                       <th class="text-nowrap">Status</th>
                     </tr>
@@ -62,7 +62,7 @@
                         <td>
                           <a href="{{url('room', $item->tanah->slug)}}" target="_blank">{{$item->tanah->nama}}</a>
                         </td>
-                        <td>{{rupiah($item->tanah->harga_sewa)}}</td>
+                        <td>{{rupiah($item->harga_total - $item->payment->jumlah_bayar)}}</td>
                         <td>{{$item->lama_sewa}} Bulan</td>
                         <td>
                           @if ($item->status == 'Proses')
