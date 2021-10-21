@@ -173,18 +173,14 @@
             <div class="d-flex justify-content-between">
               <div>
                 <p>Harga Sewa <br>
-                  Biaya Admin <br>
                   Deposit <br>
-                  Point
                 </p>
               </div>
               <div>
 
                 <p style="color: black">
                   <span id="sewatanah"></span> <br>
-                  -<br>
-                  Rp. 300.000 <br>
-                  -
+                  {{rupiah($tanah->harga_sewa / 2)}} <br>
                 </p>
                 <input type="hidden" class="DropChange" id="depost" value="0">
                 <input type="hidden" class="DropChange" id="biayadmin" value="0">
@@ -196,14 +192,8 @@
             <div class="mb-3 d-flex justify-content-between">
               @auth
               <div>
-                <div class="custom-control custom-switch custom-switch-danger switch-md mr-2 mb-1">
-                  <input type="checkbox" name="credit" class="custom-control-input" id="useCredit" value="false">
-                  <label class="custom-control-label" for="useCredit">
-                  </label>
-                </div>
               </div>
               <div>
-                {{getPointUser(Auth::id())}} Points ( {{rupiah(calculatePointUser(Auth::id()))}} )
               </div>
               @endauth
             </div>
