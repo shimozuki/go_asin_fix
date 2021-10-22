@@ -61,10 +61,10 @@ class TransactionController extends Controller
 
           $tanah->harga_sewa         = $room->harga_sewa;
           if ($request->credit) {
-            $totalharga               = $room->harga_sewa * $request->lama_sewa + $number;
+            $totalharga               = $room->harga_sewa * $request->lama_sewa;
             $tanah->harga_total       = $totalharga - $points;
           } else {
-            $tanah->harga_total       = $room->harga_sewa * $request->lama_sewa + $number;
+            $tanah->harga_total       = $room->harga_sewa * $request->lama_sewa;
           }
 
           $tanah->tgl_sewa            = Carbon::parse($request->tgl_sewa)->format('d-m-Y');
