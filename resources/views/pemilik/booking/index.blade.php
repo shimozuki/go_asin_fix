@@ -49,7 +49,7 @@
                         <td>{{getNameUser($bookings->user_id)}}</td>
                         <td><a href="https://wa.me/{{getTlpUser($bookings->user_id)}}?text=Assalamualaikum%20{{getNameUser($bookings->user_id)}}%20saya%20pemilik%20tanah">{{getTlpUser($bookings->user_id)}}</a></td>
                         <td>{{$bookings->lama_sewa}} Bulan</td>
-                        <td>{{$bookings->harga_total - $bookings->payment->jumlah_bayar}}</td>
+                        <td>{{rupiah ($bookings->harga_total - $bookings->payment->jumlah_bayar)}}</td>
                         <td>{{$bookings->payment->status}}</td>
                         <td>
                           @if ($bookings->status == 'Pending')
