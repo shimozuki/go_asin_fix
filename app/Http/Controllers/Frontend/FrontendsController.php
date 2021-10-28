@@ -11,7 +11,7 @@ class FrontendsController extends Controller
     //Homepage
     public function homepage()
     {
-      $tanah = tanah::all();
+      $tanah = tanah::where('sisa','>','0')->get();
       $counttanah = tanah::count();
       $Testimoni = Testimoni::with('User')->get();
       // dd($Testimoni);
